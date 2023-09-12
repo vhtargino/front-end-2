@@ -1,14 +1,19 @@
+// Interação com o usuário para perguntar quantos números e adicioná-los em um array
 let numeros = [];
-
-let soma = 0;
-
-quantidadeDeNumeros = parseInt(prompt("Digite quantos números vocês quer somar: "))
+let quantidadeDeNumeros = parseInt(prompt("Digite quantos números vocês quer somar: "));
 
 for (let i = 0; i < quantidadeDeNumeros; i++) {
-    numeros[i] = parseFloat(prompt(`Digite o ${i+1}º número: `))
-    soma += numeros[i];
+    numeros[i] = parseFloat(prompt(`Digite o ${i+1}º número: `));
 }
 
-alert(`A soma dos números é ${soma}.`)
+// A função recebe um array como parâmetro e soma os números contidos nele
+function somar(array) {
+    let soma = 0;
+    for (i in array) {
+        soma += array[i];
+    }
+    return soma;
+}
 
-console.log(numeros)
+// Resultado
+alert(somar(numeros));
